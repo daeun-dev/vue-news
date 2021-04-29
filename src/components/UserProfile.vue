@@ -19,14 +19,20 @@
             {{ userInfo.id }}
           </router-link> -->
           <div class="time">
-            {{ userInfo.created }}
+            <slot name="time">
+
+            </slot>
           </div>
+          <slot name = "karma"></slot>
         </div>
       </div>
 </template>
 
 <script>
 export default {
+props: {
+  info : Object
+},
 computed : {
     userInfo(){
       return this.$store.state.user;

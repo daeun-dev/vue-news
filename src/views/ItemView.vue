@@ -1,7 +1,10 @@
 <template>
   <div>
     <section>
-      <user-profile :info="fetchedItem"></user-profile>
+      <user-profile :info="fetchedItem">
+        <div slot="username">{{ fetchedItem.user }}</div>
+        <template slot="time">{{ fetchedItem.time_ago }}</template>
+      </user-profile>
       <!-- <div class="user-container">
         <div>
           <i class="fas fa-user"></i>
